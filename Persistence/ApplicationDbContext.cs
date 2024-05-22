@@ -20,21 +20,27 @@ namespace Persistence
         {
             if (!optionsBuilder.IsConfigured)
             {
+                
+
                 var builder = new ConfigurationBuilder()
-                    .SetBasePath(Environment.CurrentDirectory)
+                    .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
                 var configuration = builder.Build();
-                Debug.Write(configuration.ToString());
-                string connectionString = configuration["ConnectionStrings:DefaultConnection"];
-                optionsBuilder.UseSqlServer(connectionString);
-                //optionsBuilder.UseLoggerFactory(GetLoggerFactory());
+
+                string? connectionString = configuration["ConnectionStrings:DefaultConnection"];
+
+                if (connectionString != null)
+                {
+                    optionsBuilder
+                        .UseMySql(connectionString,ServerVersion.AutoDetect(connectionString));
+                }
             }
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+        //}
 
     }
 
