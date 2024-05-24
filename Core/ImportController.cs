@@ -29,7 +29,7 @@ public class ImportController
         {
             Title = l[0],
             Author = l[1],
-            Description = l[2],
+            Summary = l[2],
             Status = l[3],
             Rank = int.Parse(l[4]),
             Views = int.Parse(l[5]),

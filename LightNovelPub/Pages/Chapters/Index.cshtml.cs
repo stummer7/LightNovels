@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Core.Contracts;
+using Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Core.Entities;
-using Persistence;
-using Core.Contracts;
 
-namespace LightNovelPub.Pages.Novels
+namespace LightNovelPub.Pages.Novels.NewFolder
 {
     public class IndexModel : PageModel
     {
@@ -18,14 +12,16 @@ namespace LightNovelPub.Pages.Novels
 
         public IndexModel(IUnitOfWork uow)
         {
-            _uow = uow;
+                _uow = uow;
         }
-
-    
-
         public async Task OnGetAsync(int id)
         {
-            Novel = await _uow.Novels.GetByIdAsync(id,includeProperties:"Categories");
+            var novel = await _uow.Novels.GetByIdAsync(id, includeProperties: "Chapters");
+
+            if(novel != null)
+            {
+                Novel = novel;
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Core.Entities
     {
         public string Title { get; set; } = string.Empty;
         public string Author { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
+        public string Summary { get; set; } = string.Empty;
         public string Status { get; set; } = string.Empty;
         public IList<Category> Categories {get;set;} = new List<Category>();
         public IList<Chapter> Chapters { get;set;} = new List<Chapter>();

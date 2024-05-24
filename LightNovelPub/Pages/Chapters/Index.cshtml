@@ -1,0 +1,36 @@
+﻿@page
+@model LightNovelPub.Pages.Novels.NewFolder.IndexModel
+@{
+    ViewData["Title"] = @Model.Novel.Title;
+}
+
+<div class="container bg-dark p-2 rounded">
+    <div class="row">
+        <div class="col-1">
+            <img src="@Model.Novel.ImageURL" alt="Cover Picture" class="w-100" />
+        </div>
+        <div class="col position-relative">
+            <h3 class="text-primary">@Model.Novel.Title</h3>
+            <div class="position-absolute bottom-0">
+                <h6>Updated 15 hours ago</h6>
+                <h6>Status: Ongoing</h6>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <h5>@Model.Novel.Title Novel Chapters</h5>
+    <p>@Model.Novel.Summary</p>
+</div>
+
+<div class="container bg-dark p-2 mt-3 rounded">
+  <ol style="font-size:24px;grid-template-columns:repeat(2,minmax(0,1fr));display:grid" class="list-unstyled">
+        <li><a asp-page="/Chapters/Chapter" asp-route-id="2" class="text-decoration-none text-white">1.  Prologue <hr /> </a></li>
+       <li><a asp-page="" class="text-decoration-none text-white">2.  Adam<hr /> </a></li>
+       <li><a asp-page="" class="text-decoration-none text-white">3.  White Lotus<hr /></a></li>
+       <li><a asp-page="" class="text-decoration-none text-white">4.  Extortion<hr /></a></li>
+       <li><a asp-page="" class="text-decoration-none text-white">5.  Prologue <hr /> </a></li>
+       <li><a asp-page="" class="text-decoration-none text-white">6.  Adam<hr /> </a></li>
+       <li><a asp-page="" class="text-decoration-none text-white">7.  White Lotus<hr /></a></li>
+       <li><a asp-page="" class="text-decoration-none text-white">8.  Extortion<hr /></a></li>
+  </ol>
+</div>

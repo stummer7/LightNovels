@@ -11,7 +11,8 @@ namespace Core.Entities
         public string Title { get; set; } = string.Empty;
         public DateTime Released { get; set; }
         public string Text { get; set; } = string.Empty;
-
+        public Novel Novel { get; set; } = new();
+        public int NovelId { get; set; }
 
     }
 }

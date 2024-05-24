@@ -28,11 +28,14 @@ namespace Persistence
             Movies = new MovieRepository(_dbContext);
             Categories = new CategoryRepository(_dbContext);
             Novels = new NovelRepository(_dbContext);
+            Chapters = new ChapterRepository(_dbContext);
+
         }
 
         public IMovieRepository Movies { get; }
         public ICategoryRepository Categories { get; }
         public INovelRepository Novels { get; }
+        public IChapterRepository Chapters { get; }
 
         public async Task<int> SaveChangesAsync()
         {

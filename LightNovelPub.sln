@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{663115FC-FED4-4C82-8A35-C08A772D6D94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportConsoleApp", "ImportConsoleApp\ImportConsoleApp.csproj", "{159D319E-EB90-4FAA-9D88-2C9239CF7E3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportConsoleApp", "ImportConsoleApp\ImportConsoleApp.csproj", "{159D319E-EB90-4FAA-9D88-2C9239CF7E3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

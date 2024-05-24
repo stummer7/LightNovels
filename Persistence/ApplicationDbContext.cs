@@ -15,6 +15,7 @@ namespace Persistence
         public DbSet<Category> Categories => Set<Category>();
         public DbSet<Movie> Movies => Set<Movie>();
         public DbSet<Novel> Novels => Set<Novel>();
+        public DbSet<Chapter> Chapters => Set<Chapter>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

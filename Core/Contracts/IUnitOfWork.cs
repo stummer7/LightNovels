@@ -13,6 +13,7 @@ namespace Core.Contracts
         IMovieRepository Movies { get; }
         ICategoryRepository Categories { get; }
         INovelRepository Novels { get; }
+        IChapterRepository Chapters { get; }
 
         Task<int> SaveChangesAsync();
         Task DeleteDatabaseAsync();
