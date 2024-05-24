@@ -19,12 +19,6 @@ namespace LightNovelPub.Pages
 
         public async Task OnGetAsync()
         {
-            Novel n = new Novel();
-            n.Name = "Test123";
-
-            await _uow.Novels.AddAsync(n);
-            await _uow.SaveChangesAsync();
-
             Novels = await _uow.Novels.GetAllNovelsAsync();
         }
     }

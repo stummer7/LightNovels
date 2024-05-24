@@ -24,6 +24,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Data/Projekte/LightNovels/LightNovelPub/Pages/Novels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm92ZWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Data/Projekte/LightNovels/LightNovelPub/Pages/Novels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm92ZWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Data/Projekte/LightNovels/LightNovelPub/Pages/Novels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm92ZWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Data/Projekte/LightNovels/LightNovelPub/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

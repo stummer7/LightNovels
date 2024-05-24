@@ -20,7 +20,7 @@ namespace Persistence.Repositories
 
         public async Task<List<Novel>> GetAllNovelsAsync()
         {
-            return await _dbContext.Novels.ToListAsync();
+            return await _dbContext.Novels.Include(n => n.Categories).ToListAsync();
         }
     }
 }

@@ -20,12 +20,12 @@ namespace Persistence.Repositories
 
         public Task<List<Category>> GetAllCategoriesAsync()
         {
-            return _dbContext.Categories.Include(m=> m.Movies).OrderBy(c => c.Name).ToListAsync();
+            return _dbContext.Categories.Include(n=> n.Novels).OrderBy(c => c.Name).ToListAsync();
         }
 
         public Task<Category> GetByIdWithMoviesAsync(int id)
         {
-            return _dbContext.Categories.Include(m => m.Movies).FirstAsync(c => c.Id == id);
+            return _dbContext.Categories.Include(n => n.Novels).FirstAsync(c => c.Id == id);
         }
     }
 }
