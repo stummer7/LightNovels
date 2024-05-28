@@ -22,5 +22,10 @@ namespace Persistence.Repositories
         {
             return await _dbContext.Novels.Include(n => n.Categories).ToListAsync();
         }
+
+        public async Task<Novel?> GetNovelByChapterId(int id)
+        {
+            return await _dbContext.Novels.Include(n => n.Chapters).SingleOrDefaultAsync(n => n.Chapters.Any(c => c.Id == id));
+        }
     }
 }

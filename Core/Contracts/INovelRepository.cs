@@ -10,5 +10,6 @@ namespace Core.Contracts
     public interface INovelRepository : IGenericRepository<Novel>
     {
         Task<List<Novel>> GetAllNovelsAsync();
+        Task<Novel?> GetNovelByChapterId(int id);
     }
 }
