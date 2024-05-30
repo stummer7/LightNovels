@@ -1,0 +1,76 @@
+﻿@using Core.Entities;
+@model Novel
+@{
+    ViewData["Title"] = @Model.Title;
+}
+
+<div class="container bg-dark pt-2">
+    <div class="row align-items-center position-relative">
+        <div class="col-4">
+            <img class="rounded w-100 h-100" src="@Model.ImageURL" alt="Cover Picture" />
+        </div>
+        <div class="col-8">
+            <div class="position-absolute bottom-0">
+                <h2>@Model.Title</h2>
+                <p>Author: @Model.Author</p>
+                <h4>Rank @Model.Rank</h4>
+                <div class="d-flex">
+                    <div>
+                        <p class="mb-0">Chapters</p>
+                        <p class="fw-bold">@Model.Chapters.Count</p>
+                    </div>
+                    <div class="ms-3 ps-2" style="border-left: 2px solid white">
+                        <p class="mb-0">Views</p>
+                        <p class="fw-bold">@Model.Views</p>
+                    </div>
+                    <div class="ms-3 ps-2" style="border-left: 2px solid white">
+                        <p class="mb-0">Bookmarked</p>
+                        <p class="fw-bold">@Model.Bookmarked</p>
+                    </div>
+                    <div class="ms-3 ps-2" style="border-left: 2px solid white">
+                        <p class="mb-0">Status</p>
+                        <p class="fw-bold text-danger">@Model.Status</p>
+                    </div>
+                </div>
+                <h6 class="mt-4">Categories</h6>
+                <div class="d-flex">
+                    @foreach (var item in @Model.Categories)
+                    {
+                        <button type="button" class="btn btn-primary" style="margin-right:10px">@item.Name</button>
+                    }
+                </div>
+                <div class="d-flex mt-3">
+                    <button type="button" class="btn btn-primary w-100">Continue Reading</button>
+                    <button type="button" class="btn btn-primary ms-3 w-100">Add To Library</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5 p-2">
+        <hr />
+        <div class="col border rounded">
+            <a class="text-decoration-none text-white" style="cursor:pointer" asp-controller="Chapters" asp-action="Index" asp-route-id="@Model.Id">
+                <h2>Novel Chapters</h2>
+                <h6>Chapter 311: Hesitancy</h6>
+                <h6>Updated 14 Hours ago</h6>
+            </a>
+        </div>
+        <div class="col-1"></div>
+        <div class="col border rounded">
+            <a class="text-decoration-none text-white" style="cursor:pointer">
+                <h2>User Reviews</h2>
+                <h6>Reviews from 6 readers</h6>
+                <h6>Average score is 3.7</h6>
+            </a>
+        </div>
+    </div>
+    <div class="mt-2">
+        <hr />
+        <h2>Summary</h2>
+        @foreach (var item in @Model.Summary.Split("\n"))
+        {
+            <p>@item</p>
+        }
+    </div>
+</div>
+

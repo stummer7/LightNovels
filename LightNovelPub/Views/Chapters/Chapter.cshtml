@@ -1,0 +1,29 @@
+﻿@using LightNovelPub.Models;
+@model ChapterPage
+@{
+    ViewData["Title"] = @Model.Chapter.Novel.Title;
+}
+
+<div class="container bg-dark rounded">
+    <a asp-controller="Novels" asp-action="Index" asp-route-id="@Model.Chapter.Novel.Id" class="text-decoration-none">
+        <h2 class="text-primary">@Model.Chapter.Novel.Title</h2>
+    </a>
+    <h5>Chapter: @Model.Chapter.Title</h5>
+    <hr />
+
+    @foreach (var item in @Model.Chapter.Text.Split("\n"))
+    {
+            <p>@item</p>
+    }
+
+    <div class="d-flex justify-content-center">
+        <form method="post" asp-action="NavigateChapters">
+            <input type="hidden" asp-for="@Model.NextChapterId" />
+            <input type="hidden" asp-for="@Model.PrevChapterId" />
+            <input type="hidden" asp-for="@Model.NovelId" />
+            <button type="submit" class="btn btn-primary ms-3" style="width:90px" name="action" value="Previous" @(Model.DisablePrevBtn ? "disabled": "")>Previous</button>
+            <button type="submit" class="btn btn-primary ms-3" style="width:90px" name="action" value="Home">Home</button>
+            <button type="submit" class="btn btn-primary ms-3" style="width:90px" name="action" value="Next" @(Model.DisableNextBtn ? "disabled": "")>Next</button>
+        </form>
+    </div>
+</div>
